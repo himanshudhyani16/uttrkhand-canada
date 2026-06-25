@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
 import Link from "next/link";
@@ -8,7 +9,7 @@ import { FiUserPlus } from "react-icons/fi";
 import { GrGroup } from "react-icons/gr";
 
 const navLinks = [
-  { href: "/", label: "Home", active: true },
+  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/events", label: "Events" },
   { href: "/join-us", label: "Join Us" },
@@ -19,6 +20,7 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   const headerRef = useRef<HTMLElement>(null);
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -119,14 +121,14 @@ export default function Header() {
                 href={link.href}
                 className={`relative text-[13.5px] font-semibold font-inter pb-0.5 transition-colors duration-200
                   ${
-                    link.active
+                    pathname === link.href
                       ? "text-[#E8651A]"
                       : "text-gray-700 hover:text-[#E8651A]"
                   }
                 `}
               >
                 {link.label}
-                {link.active && (
+                {pathname === link.href && (
                   <span className="absolute -bottom-0.5 left-0 right-0 h-[2px] bg-[#E8651A] rounded-full" />
                 )}
               </Link>
@@ -204,7 +206,7 @@ export default function Header() {
                 >
                   <Link
                     href={link.href}
-                    className={`block px-3 py-2.5 rounded-lg text-sm font-medium font-inter transition-colors ${link.active ? "text-[#E8651A] bg-orange-50" : "text-gray-700 hover:text-[#E8651A] hover:bg-orange-50"}`}
+                    className={`block px-3 py-2.5 rounded-lg text-sm font-medium font-inter transition-colors ${pathname === link.href ? "text-[#E8651A] bg-orange-50" : "text-gray-700 hover:text-[#E8651A] hover:bg-orange-50"}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}

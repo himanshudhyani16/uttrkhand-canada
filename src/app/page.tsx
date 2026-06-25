@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import WelcomeSection from "@/components/WelcomeSection";
 import AboutSection from "@/components/AboutSection";
@@ -8,11 +7,11 @@ import EventsSection from "@/components/EventsSection";
 import DevbhoomiSection from "@/components/DevbhoomiSection";
 import BlogSection from "@/components/BlogSection";
 import GallerySection from "@/components/GallerySection";
+import BecomeMember from "@/components/BecomeMember";
 
 export default function Home() {
   return (
     <main>
-      <Header />
       <HeroSection />
       <WelcomeSection />
       <AboutSection />
@@ -20,6 +19,7 @@ export default function Home() {
       <EventsSection />
       <CultureSection />
       <DevbhoomiSection />
+      <BecomeMember />
       <GallerySection />
       <BlogSection />
     </main>

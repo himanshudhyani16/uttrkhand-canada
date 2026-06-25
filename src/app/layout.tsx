@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter, Gelasio } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const playfair = Playfair_Display({
@@ -24,9 +25,9 @@ const gelasio = Gelasio({
   display: "swap",
 });
 
-
 export const metadata: Metadata = {
-  title: "Uttarakhand Community Association of Canada | Connecting Uttarakhandi Hearts",
+  title:
+    "Uttarakhand Community Association of Canada | Connecting Uttarakhandi Hearts",
   description:
     "Uniting Uttarakhandi families across Canada — preserving our heritage, celebrating our culture, and building a stronger community together.",
   keywords: [
@@ -51,8 +52,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable} ${gelasio.variable}`}>
-      <body className={`${playfair.variable} ${inter.variable} ${gelasio.variable} font-inter text-gray-800 antialiased`}>
+    <html
+      lang="en"
+      className={`${playfair.variable} ${inter.variable} ${gelasio.variable}`}
+    >
+      <body
+        className={`${playfair.variable} ${inter.variable} ${gelasio.variable} font-inter text-gray-800 antialiased`}
+      >
+        <Header />
         {children}
         <Footer />
       </body>
