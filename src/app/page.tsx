@@ -8,6 +8,7 @@ import DevbhoomiSection from "@/components/DevbhoomiSection";
 import BlogSection from "@/components/BlogSection";
 import GallerySection from "@/components/GallerySection";
 import BecomeMember from "@/components/BecomeMember";
+import AIpanRow from "@/components/AIpanRow";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <WelcomeSection />
       <AboutSection />
       <StatsSection />
+      <AIpanRow />
       <EventsSection />
       <CultureSection />
       <DevbhoomiSection />
