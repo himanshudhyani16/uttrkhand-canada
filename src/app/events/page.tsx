@@ -1,6 +1,9 @@
 import CommonHeroSection from "@/components/CommonHeroSection";
 import { FiMail, FiUserPlus } from "react-icons/fi";
 import UpcomingEvents from "@/components/events/UpcomingEvents";
+import GallerySection from "@/components/GallerySection";
+import BecomeMember from "@/components/BecomeMember";
+import EventStats from "@/components/events/EventStats";
 
 export default function AIpanRow() {
   return (
@@ -29,6 +32,9 @@ export default function AIpanRow() {
         }}
       />
       <UpcomingEvents />
+      <EventStats />
+      <GallerySection /> 
+      <BecomeMember />
     </>
   );
 }

@@ -88,17 +88,15 @@ export default function HelpSection() {
           className="flex flex-col items-center text-center mb-16"
         >
           <div className="flex items-center gap-4 mb-4">
-            <div className="flex items-center gap-1">
-              <div className="h-[1px] w-8 sm:w-12 bg-[#EE660C]"></div>
-              <span className="text-[#EE660C] text-xs">❖</span>
-            </div>
+            <span className="text-[#EE660C] text-2xl font-serif select-none opacity-80">
+              ❖
+            </span>
             <h2 className="text-white font-playfair font-bold text-3xl md:text-4xl">
               We&apos;re Here to Help
             </h2>
-            <div className="flex items-center gap-1">
-              <span className="text-[#EE660C] text-xs">❖</span>
-              <div className="h-[1px] w-8 sm:w-12 bg-[#EE660C]"></div>
-            </div>
+            <span className="text-[#EE660C] text-2xl font-serif select-none opacity-80">
+              ❖
+            </span>
           </div>
           <p className="text-gray-300 font-inter text-[15px] max-w-[600px]">
             Whether you have a question, need support, or want to get involved,

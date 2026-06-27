@@ -77,17 +77,15 @@ export default function FAQ() {
           className="flex flex-col items-center text-center mb-16"
         >
           <div className="flex items-center justify-center gap-4">
-            <div className="flex items-center gap-1">
-              <div className="h-[1px] w-8 sm:w-12 bg-[#EE660C]"></div>
-              <span className="text-[#EE660C] text-xs">❖</span>
-            </div>
+            <span className="text-[#EE660C] text-2xl font-serif select-none opacity-80">
+              ❖
+            </span>
             <h2 className="text-[#1A2340] font-playfair font-bold text-2xl md:text-3xl lg:text-4xl">
               Frequently Asked Questions
             </h2>
-            <div className="flex items-center gap-1">
-              <span className="text-[#EE660C] text-xs">❖</span>
-              <div className="h-[1px] w-8 sm:w-12 bg-[#EE660C]"></div>
-            </div>
+            <span className="text-[#EE660C] text-2xl font-serif select-none opacity-80">
+              ❖
+            </span>
           </div>
         </motion.div>
 

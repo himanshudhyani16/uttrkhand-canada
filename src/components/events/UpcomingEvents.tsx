@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { FiCalendar, FiClock, FiMapPin } from "react-icons/fi";
+import EventModal, { EventDetails } from "./EventModal";
+import RegisterModal from "./RegisterModal";
 
 const upcomingEvents = [
   {
@@ -15,6 +18,10 @@ const upcomingEvents = [
     dateInfo: "25 May, 2024 (Saturday)",
     timeInfo: "10:00 AM - 5:00 PM",
     locationInfo: "Brampton, Ontario",
+    description: "Join us for a spiritual journey to Kedarnath Dham. Let's seek blessings together and celebrate our devotion and heritage.",
+    audience: "Open to All",
+    fee: "Member: Free | Non-Member: $20",
+    highlights: ["Pooja & Aarti", "Bhajan & Kirtan", "Cultural Performances", "Prasad Distribution"]
   },
   {
     id: 2,
@@ -49,6 +56,9 @@ const upcomingEvents = [
 ];
 
 export default function UpcomingEvents() {
+  const [selectedEvent, setSelectedEvent] = useState<EventDetails | null>(null);
+  const [registerEvent, setRegisterEvent] = useState<EventDetails | null>(null);
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -180,18 +190,18 @@ export default function UpcomingEvents() {
 
                 {/* Action Buttons */}
                 <div className="grid grid-cols-2 gap-3 mt-auto">
-                  <Link 
-                    href="#" 
+                  <button 
+                    onClick={() => setSelectedEvent(event)}
                     className="flex items-center justify-center border border-[#1A2340] text-[#1A2340] hover:bg-[#1A2340] hover:text-white transition-colors rounded-md py-2.5 font-inter font-bold text-[13px]"
                   >
                     View Details
-                  </Link>
-                  <Link 
-                    href="#" 
+                  </button>
+                  <button 
+                    onClick={() => setRegisterEvent(event)}
                     className="flex items-center justify-center bg-[#EE660C] hover:bg-[#D45A0A] text-white transition-colors rounded-md py-2.5 font-inter font-bold text-[13px]"
                   >
                     Register Now
-                  </Link>
+                  </button>
                 </div>
               </div>
             </motion.div>
@@ -199,6 +209,21 @@ export default function UpcomingEvents() {
         </motion.div>
 
       </div>
+
+      <EventModal 
+        isOpen={!!selectedEvent} 
+        onClose={() => setSelectedEvent(null)} 
+        event={selectedEvent} 
+        onRegisterClick={() => {
+          setRegisterEvent(selectedEvent);
+          setSelectedEvent(null);
+        }}
+      />
+      <RegisterModal 
+        isOpen={!!registerEvent} 
+        onClose={() => setRegisterEvent(null)} 
+        event={registerEvent} 
+      />
     </section>
   );
 }

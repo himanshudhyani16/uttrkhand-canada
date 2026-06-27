@@ -124,7 +124,8 @@ export default function CommonHeroSection({
           />
         </div>
         {/* ── Hero Content ── */}
-        <div className="relative z-20 w-full h-full flex items-center px-6 md:px-16 lg:px-24">
+        {/* <div className="relative z-20 w-full h-full flex items-center px-6 md:px-16 lg:px-24"> */}
+        <div className="relative container  z-20 w-full h-full  flex items-center mx-auto px-6 sm:px-10 lg:px-14">
           <div className="max-w-2xl flex flex-col gap-5">
             {/* Badge / Subtitle */}
             {subtitle && (
