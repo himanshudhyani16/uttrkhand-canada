@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { FiCamera, FiMap, FiUsers, FiCheckCircle } from "react-icons/fi";
 import { GiTempleDoor, GiMountains } from "react-icons/gi"; // For temple and mountains if possible, otherwise use standard. We'll use standard feather icons to be safe, or just custom SVGs.
@@ -100,7 +100,7 @@ const discoverCards = [
 ];
 
 export default function DiscoverUttarakhand() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -108,7 +108,7 @@ export default function DiscoverUttarakhand() {
     },
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,

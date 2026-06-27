@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { FiMapPin } from "react-icons/fi";
 import { GiMountains, GiTempleDoor, GiMusicalNotes } from "react-icons/gi";
@@ -61,7 +61,7 @@ const stats = [
 ];
 
 export default function UttarakhandStats() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -73,7 +73,7 @@ export default function UttarakhandStats() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, scale: 0.95 },
     visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
   };
