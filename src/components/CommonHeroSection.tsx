@@ -78,7 +78,7 @@ export default function CommonHeroSection({
     <>
       <section
         id="hero"
-        className="relative w-full overflow-hidden"
+        className="relative w-full overflow-hidden z-1"
         style={{ height: "calc(80vh - 68px)" }}
         aria-label="Hero section"
       >
